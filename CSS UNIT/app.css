@@ -1,11 +1,28 @@
 h1 {
 	color: #54206E;
+	
+	/*border-color: red;
+	border-width: 5px;
+	border-style:solid; */
+
+	border: 2px solid red;  
 }
 
 h4 {
-	color: rgb(240,99,100);
+	color: rgb(1,99,100);
 }
 
 ul {
 	color: rgba(11,99,150,.5);
+}
+
+h4 {
+	background: rgb(255,100,80);
+}
+
+body {
+	background: pink;
+	/*background: url(http://www.backgroundsy.com/file/large/wood-grain.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;*/
 }
