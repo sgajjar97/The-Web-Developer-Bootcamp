@@ -1,11 +1,11 @@
 h1 {
-	color: red;
-}
-
-li {
-	color: green;
+	color: #54206E;
 }
 
 h4 {
-	color: purple;
+	color: rgb(240,99,100);
+}
+
+ul {
+	color: rgba(11,99,150,.5);
 }
