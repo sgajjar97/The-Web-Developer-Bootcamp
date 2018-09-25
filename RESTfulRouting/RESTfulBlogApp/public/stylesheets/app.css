@@ -1,0 +1,12 @@
+i.icon {
+    font-size: 2em;
+}
+
+.container.main {
+    margin-top: 7.0em;
+}
+
+.ui.animated {
+    background-color: black;
+    color: white;
+}
