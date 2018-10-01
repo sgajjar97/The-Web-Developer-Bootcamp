@@ -6,7 +6,6 @@ i.icon {
     margin-top: 7.0em;
 }
 
-.ui.animated {
-    background-color: black;
-    color: white;
+#delete {
+    display: inline;
 }
