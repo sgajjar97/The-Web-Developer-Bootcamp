@@ -38,6 +38,26 @@ app.get("/secret", function(req, res){
    res.render("secret"); 
 });
 
+//AUTH ROUTES
+
+//show signup form
+app.get("/register", function(req, res){
+    res.render('register');
+});
+
+//handling user signup
+app.post("/register", function(req, res){
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.render('register');
+        }
+        passport.authenticate("local")(req, res, function(){
+           res.redirect("/secret");
+        });
+    });
+});
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server started...");
 })
