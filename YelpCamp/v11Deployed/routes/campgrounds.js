@@ -4,15 +4,15 @@ var Campground = require("../models/campground");
 var middleware = require("../middleware");
 
 
-//INDEX route - show all campgrounds
+//INDEX - show all campgrounds
 router.get("/", function(req, res){
-    //Get all campgrounds from DB
+    // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
-        if (err){
-            console.log(err);
-        } else {
-            res.render("campgrounds/index", {campgrounds: allCampgrounds, currentUser: req.user});
-        }
+       if(err){
+           console.log(err);
+       } else {
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
+       }
     });
 });
 
@@ -21,12 +21,13 @@ router.post("/", middleware.isLoggedIn, function(req, res){
    //get data from form and add to campgrounds array
    var name = req.body.name;
    var image = req.body.image;
+   var cost = req.body.cost;
    var desc = req.body.description;
    var author = {
        id: req.user._id,
        username: req.user.username  
    }
-   var newCampground = {name: name, image: image, description: desc, author: author};
+   var newCampground = {name: name, image: image, cost: cost, description: desc, author:author};
    
    //Creat a new campground and save to DB
    Campground.create(newCampground, function(err, newlyCreated){
@@ -68,9 +69,10 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 
 //Update Campground Route
 router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
+    var newData = {name: req.body.name, image: req.body.image, cost: req.body.cost, description: req.body.description};
     // find and update the correct campground
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
-       if(err){
+       if(err){``
            res.redirect("/campgrounds");
        } else {
            //redirect somewhere(show page)
