@@ -32,6 +32,8 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //seedDB();     //seed the database
 
+app.locals.moment = require('moment');
+
 //Passport Configuration
 app.use(require("express-session")({
     secret: "Dogs win!",
