@@ -32,7 +32,7 @@ A Node.js web application
 
 - Update personal information on profile page
 
-> Built with:
+## Built with:
 
 ### Front-end
 - EJS
