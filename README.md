@@ -20,4 +20,17 @@ A Node.js web application
     - Upload campground photos
     - Display campground location on Google Maps
     - Search existing campgrounds
+
+  - Manage user account with basic functionalities:
+    - Profile page setup with sign-up
+
+  - Flash messages responding to users' interaction with the app
+
+  - Responsive web design
+  
+## Custom Enhancements
+
+- Update campground photos when editing campgrounds
+
+- Update personal information on profile page
       
